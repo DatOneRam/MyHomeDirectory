@@ -29,56 +29,84 @@ public class AnotherAnotherSmallDemoProgram
       prompt.nextLine();
       System.out.println("I WILL TELL YOU IF TWO SHAPES ARE EQUAL!");
       prompt.nextLine();
-      //get the first radius of a circle
-      System.out.println("PLEASE ENTER IN A RADIUS FOR ME TO MAKE A CIRCLE!");
-      System.out.print("⎲⎲⎲ ");
-      radius1 = prompt.nextDouble();
-      //get the second radius of a circle
-      System.out.println("ANOTHER ONE, PLEASE!");
-      System.out.print("⎲⎲⎲ ");
-      radius2 = prompt.nextDouble();
+      
+      //get the first radius of a circle and check to make sure it is valid
+      do
+      {
+         System.out.println("PLEASE ENTER IN A VALID RADIUS FOR ME TO MAKE A CIRCLE!");
+         System.out.print("⎲⎲⎲ ");
+         radius1 = prompt.nextDouble();
+      }
+      while (!Circle.verify(radius1));
+      
+      //get the second radius of a circle and check to make sure it is valid
+      do
+      {
+         System.out.println("ANOTHER VALID ONE, PLEASE!");
+         System.out.print("⎲⎲⎲ ");
+         radius2 = prompt.nextDouble();
+      }
+      while (!Circle.verify(radius2));
       
       prompt.nextLine();
       System.out.println("FANTASTIC!!!!");
       prompt.nextLine();
-      //get the first length and width of the first triangle
-      System.out.println("\nNOW PLEASE ENTER IN A LENGTH AND WIDTH (in that order) FOR A RECTANGLE MY FRIEND!!!");
-      System.out.print("⎲⎲⎲ ");
-      length1 = prompt.nextDouble();
-      System.out.print("⎲⎲⎲ ");
-      width1 = prompt.nextDouble();
-      //get the length and width of the second triangle
-      System.out.println("SUPERB! MAY I HAVE ANOTHER PAIR SIR/MA'AM/NON-BINARY?");
-      System.out.print("⎲⎲⎲ ");
-      length2 = prompt.nextDouble();
-      System.out.print("⎲⎲⎲ ");
-      width2= prompt.nextDouble();
+      //get the first length and width of the first rectangle and check to make sure it is valid
+      do
+      {
+         System.out.println("\nNOW PLEASE ENTER IN A VALID LENGTH AND WIDTH (in that order) FOR A RECTANGLE MY FRIEND!!!");
+         System.out.print("⎲⎲⎲ ");
+         length1 = prompt.nextDouble();
+         System.out.print("⎲⎲⎲ ");
+         width1 = prompt.nextDouble();
+      }
+      while (!Rectangle.verify(width1, length1));
+      
+      //get the length and width of the second rectangle and  check to make sure it is valid
+      do
+      {
+         System.out.println("SUPERB! MAY I HAVE ANOTHER VALID PAIR SIR/MA'AM/NON-BINARY?");
+         System.out.print("⎲⎲⎲ ");
+         length2 = prompt.nextDouble();
+         System.out.print("⎲⎲⎲ ");
+         width2= prompt.nextDouble();
+      }
+      while (!Rectangle.verify(width2, length2));
       
       prompt.nextLine();
       System.out.println("ABSOLUTLEY UNBELIVABLE!!!");
       prompt.nextLine();
-      //get the 3 side lengths of the first triangle
-      System.out.println("WOULD YOU CARE TO ENTER IN THREE SIDE LENGTHS FOR ME TO MAKE A THREE ANGLED POLYGON????????");
-      System.out.print("⎲⎲⎲ ");
-      side1one = prompt.nextDouble();
-      System.out.print("⎲⎲⎲ ");
-      side2one = prompt.nextDouble();
-      System.out.print("⎲⎲⎲ ");
-      side3one = prompt.nextDouble();
+      //get the 3 side lengths of the first triangle and check to make sure it is valid
+      do
+      {
+         System.out.println("WOULD YOU CARE TO ENTER IN THREE VALID SIDE LENGTHS FOR ME TO MAKE A THREE ANGLED POLYGON????????");
+         System.out.print("⎲⎲⎲ ");
+         side1one = prompt.nextDouble();
+         System.out.print("⎲⎲⎲ ");
+         side2one = prompt.nextDouble();
+         System.out.print("⎲⎲⎲ ");
+         side3one = prompt.nextDouble();
+      }
+      while (!Triangle.verify(side1one, side2one, side3one));
       
-      //get the 3 side lengths of the second triangle
+      //confirmation
       prompt.nextLine();
       System.out.println("ETHERALLY RADICAL!!!!!");
       prompt.nextLine();
-      System.out.println("COULD YOU DO IT AGAIN SO I HAVE TWO TO COMPARE????????");
-      System.out.print("⎲⎲⎲ ");
-      side1two = prompt.nextDouble();
-      System.out.print("⎲⎲⎲ ");
-      side2two = prompt.nextDouble();
-      System.out.print("⎲⎲⎲ ");
-      side3two = prompt.nextDouble();
+      //get the 3 side lengths of the second triangle and check to make sure it is valid
+      do
+      {
+         System.out.println("COULD YOU DO IT AGAIN IN A VALID WAY SO I HAVE TWO TO COMPARE????????");
+         System.out.print("⎲⎲⎲ ");
+         side1two = prompt.nextDouble();
+         System.out.print("⎲⎲⎲ ");
+         side2two = prompt.nextDouble();
+         System.out.print("⎲⎲⎲ ");
+         side3two = prompt.nextDouble();
+      }
+      while (!Triangle.verify(side1two, side2two, side3two));
       
-      //make all the shapes with their respective measurments
+      //make all the shapes with their respective measurments that we have verified are valid
       Circle circ1 = new Circle(radius1);
       Circle circ2 = new Circle(radius2);
       Rectangle rect1 = new Rectangle(width1, length1);

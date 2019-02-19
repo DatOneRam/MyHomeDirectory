@@ -66,9 +66,30 @@ public class Rectangle
    {
       String str;
       
-      str = "Width: " + width + "\nLength: " + length;
-      
-      System.out.println(str);
+      str = "Width: " + width + ", Length: " + length;
+
       return str;
+   }
+   
+   //method to determine whether another rectangle is equal to another
+   //returns boolean
+   //one Rectangle parameter to hold the rectangle to compare to
+   public boolean equals(Rectangle rect)
+   {
+      if (length == rect.getLength() && width == rect.getWidth())
+         return true;
+      else
+         return false;
+   }
+   
+   //method to determine whether two side lengths form a valid rectangle
+   //three double parameters, one for each side lenghts
+   //returns a boolean, whether or not the triangle is valid
+   public static boolean verify(double w, double l)
+   {
+      if (w > 0 && l > 0)
+         return true;
+      else
+         return false;
    }
 }

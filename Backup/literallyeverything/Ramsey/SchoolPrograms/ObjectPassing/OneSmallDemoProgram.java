@@ -24,40 +24,53 @@ public class OneSmallDemoProgram
       //intro
       System.out.println("Class to calcuate Area and Perimeter, this is.");
       System.out.println("Make a rectangle, we will now.");
+      System.out.println("Ask again I will, if you enter in invalid values");
       
-      //get width and length
-      System.out.println("Width please, enter in:");
-      width = prompt.nextDouble();
-      System.out.println("Length please, enter in:");
-      length = prompt.nextDouble();
+      //get width and length every time they enter in an invalid value
+      do
+      {
+         System.out.println("Width please, enter in:");
+         width = prompt.nextDouble();
+         System.out.println("Length please, enter in:");
+         length = prompt.nextDouble();
       
-      //create a new rectangle with width and length as the arguemnts
-      rect = new Rectangle(width, length);
+         //create a new rectangle with width and length as the arguemnts
+         rect = new Rectangle(width, length);
+      }
+      while (!rect.verify(rect.getWidth(), rect.getLength()));
       
       //get all the sides lengths for the triangle
-      System.out.println("Triangle, we now create.");
-      System.out.println("Side one length, type in:");
-      //(side length 1)
-      s1 = prompt.nextDouble();
-      System.out.println("Side two length, type in:");
-      //(side length 2)
-      s2 = prompt.nextDouble();
-      System.out.println("Side three length, type in:");
-      //(side length 3)
-      s3 = prompt.nextDouble();
-      
-      //create a new triangle with the side lengths
-      tri = new Triangle(s1, s2, s3);
-      
-      //get radius of circle
-      System.out.println("A circle, we now build.");
-      System.out.println("Radius, I must have:");
-      //read it new
-      radius = prompt.nextDouble();
-      
-      //make a new circle with that radius
-      circ = new Circle(radius);
-            
+      do
+      {
+         System.out.println("Triangle, we now create.");
+         System.out.println("Side one length, type in:");
+         //(side length 1)
+         s1 = prompt.nextDouble();
+         System.out.println("Side two length, type in:");
+         //(side length 2)
+         s2 = prompt.nextDouble();
+         System.out.println("Side three length, type in:");
+         //(side length 3)
+         s3 = prompt.nextDouble();
+         
+         //create a new triangle with the side lengths
+         tri = new Triangle(s1, s2, s3);
+      }
+      while (!tri.verify(tri.getSide1(), tri.getSide2(), tri.getSide3()));
+       
+      do
+      {
+         //get radius of circle
+         System.out.println("A circle, we now build.");
+         System.out.println("Radius, I must have:");
+         //read it new
+         radius = prompt.nextDouble();
+         
+         //make a new circle with that radius
+         circ = new Circle(radius);
+      }
+      while (!circ.verify(circ.getRadius()));
+        
       //show the areas/perimeters
       System.out.println("Impressive, this is!\nThe stats, here are:");
       System.out.printf("RECTANGLE AREA: %.2f\n", Area.getArea(rect));

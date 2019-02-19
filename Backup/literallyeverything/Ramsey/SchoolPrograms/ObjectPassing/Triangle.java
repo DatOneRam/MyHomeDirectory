@@ -84,8 +84,53 @@ public class Triangle
    public String toString()
    {
       String str;
-      str = "Side 1: " + side1 + "\nSide 2: " + side2 + "\nSide 3: " + side3;
-      System.out.println(str);
+      str = "Side 1: " + side1 + ", Side 2: " + side2 + ", Side 3: " + side3;
       return str;
+   }
+   
+   //method to determine whether another triangle is equal to another
+   //returns boolean
+   //one Triangle parameter to hold the triangle to compare to
+   public boolean equals(Triangle tri)
+   {
+      if (side1 == tri.getSide1() && side2 == tri.getSide2() && side3 == tri.getSide3())
+         return true;
+      else
+         return false;
+   }
+   
+   //method to determine whether three side lengths form a valid triangle
+   //three double parameters, one for each side lenghts
+   //returns a boolean, whether or not the triangle is valid
+   public static boolean verify(double one, double two, double three)
+   {
+      if (one <= 0 || two <= 0 || three <= 0)
+         return false;
+
+      if (one > two && one > three)
+      {
+         if (one < two + three)
+            return true;
+         else
+            return false;
+      }
+      
+      if (two > one && two > three)
+      {
+         if (two < one + three)
+            return true;
+         else
+            return false;
+      }
+      
+      if (three > one && three > two)
+      {
+         if (three < two + one)
+            return true;
+         else 
+            return false;
+      }
+      
+      return true;
    }
 }

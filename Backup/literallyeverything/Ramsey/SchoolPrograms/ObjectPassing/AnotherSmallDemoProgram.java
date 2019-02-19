@@ -163,7 +163,10 @@ public class AnotherSmallDemoProgram
       
       //display the informations
       System.out.printf("CIRCLE AREA: %.2f" , Area.getArea(circ));
+      System.out.printf("CIRCLE CIRCUMFERENCE: %.2f", Area.getCircumference(circ));
       System.out.printf("RECTANGLE AREA: %.2f", Area.getArea(rect));
+      System.out.printf("RECTANGLE PERIMETER: %.2f", Area.getPerimeter(rect));
+      System.out.printf("TRIANGLE AREA: %.2f", Area.getArea(tri));
       System.out.printf("TRIANGLE PERIEMTER: %.2f", Area.getArea(tri));
       
       //endings if the user was mean or nice

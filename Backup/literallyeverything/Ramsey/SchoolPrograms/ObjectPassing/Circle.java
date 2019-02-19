@@ -49,7 +49,28 @@ public class Circle
    {
       String str;
       str = "Radius: " + radius;
-      System.out.println(str);
       return str;
+   }
+   
+   //method to determine whether another circle is equal to another
+   //returns boolean
+   //one Circle parameter to hold the circle to compare to
+   public boolean equals(Circle circ)
+   {
+      if (radius == circ.getRadius())
+         return true;
+      else
+         return false;
+   }
+   
+   //method to determine whether a radius
+   //one double parameters, to hold the radius
+   //returns a boolean, whether or not the circle is valid
+   public static boolean verify(double rad)
+   {
+      if (rad <= 0)
+         return false;
+      else
+         return true;
    }
 }
